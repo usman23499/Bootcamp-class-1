@@ -1,0 +1,22 @@
+name: BootCampClass1
+
+on:
+  push:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Node
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: 12
+    - name: Installing Surge
+      run: npm install --global surge
+    - name: Deploying using surge
+      run: surge ./ outgoing-payment.surge.sh --token ${{secrets.TOKEN}}
+      
