@@ -1,8 +1,8 @@
-name: BootCampClass1
+name: BootCamp-Class-1
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   
 jobs:
   build:
